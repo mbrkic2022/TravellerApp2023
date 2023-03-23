@@ -29,6 +29,10 @@ namespace TravellerApp
 
             var rows = conn.Insert(post);
             conn.Close();
+            if (rows > 0)
+            {
+                await DisplayAlert("Success", "Experience successfully inserted!", "OK");
+            }
         }
     }
 }
