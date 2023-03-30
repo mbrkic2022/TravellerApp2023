@@ -8,6 +8,27 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="ExperienceEntry" Placeholder="Write your experience"/>
+            <ListView x:Name="LocationsListView" HorizontalOptions="FillAndExpand" Margin="20,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding CountryName}" FontAttributes="Bold"/>
+                                <Label Grid.Row="1" TextColor="DodgerBlue" Text="{Binding Thoroughfare}"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding SubAdminArea}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

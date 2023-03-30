@@ -4,6 +4,6 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="TravellerApp.MapPage">
     <ContentPage.Content>
-        <maps:Map x:Name="locationsMap" HorizontalOptions="FillAndExpand"/>
+        <maps:Map x:Name="locationsMap" HorizontalOptions="FillAndExpand" IsShowingUser="False"/>
     </ContentPage.Content>
 </ContentPage>
