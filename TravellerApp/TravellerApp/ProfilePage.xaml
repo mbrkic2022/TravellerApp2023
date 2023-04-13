@@ -4,9 +4,19 @@
              x:Class="TravellerApp.ProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="postCountLabel" 
+                   TextColor="DodgerBlue" 
+                   HorizontalOptions="Center"
+                   Text="--"
+                   FontAttributes="Bold"/>
+            <Label Text="posts" HorizontalOptions="Center"/>
+            <ListView x:Name="countriesListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Key}" Detail="{Binding Value}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
