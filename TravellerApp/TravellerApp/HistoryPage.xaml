@@ -6,7 +6,7 @@
         <ListView x:Name="PostListView" ItemSelected="PostListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Experience}"/>
+                    <TextCell Text="{Binding Experience}" Detail="{Binding Country}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
