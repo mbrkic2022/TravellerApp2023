@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravellerApp.Helpers;
 using Xamarin.Forms;
 
 namespace TravellerApp
@@ -21,9 +22,10 @@ namespace TravellerApp
             bool isPasswordEmpty = string.IsNullOrWhiteSpace(PasswordEntry.Text);
             if (!isEmailEmpty && !isPasswordEmpty)
             {
-                await Navigation.PushAsync(new HomePage());
+                bool result = await Auth.LoginUser(EmailEntry.Text, PasswordEntry.Text);
+                if (result) await Navigation.PushAsync(new HomePage());
             }
-            else 
+            else
             {
                 await DisplayAlert("E-mail and password required", "Please enter both e-mail and password!", "OK");
             }
